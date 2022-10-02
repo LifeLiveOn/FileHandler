@@ -17,8 +17,8 @@ app.get('/', function (req, res) {
 //Configuration for Multer
 
 const upload = multer({ dest: "public/files" });
-
-app.post('/api/fileanalyse', upload.single("myFile"), function (req, res) {
+// must have same name on index html for the input value;
+app.post('/api/fileanalyse', upload.single("upfile"), function (req, res) {
   res.json(req.file); // get the file infos
 })
 
