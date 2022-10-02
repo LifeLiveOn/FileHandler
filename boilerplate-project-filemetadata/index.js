@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
 const upload = multer({ dest: "public/files" });
 
 app.post('/api/fileanalyse', upload.single("myFile"), function (req, res) {
-  res.json(req.body); // get the file infos
+  res.json(req.file); // get the file infos
 })
 
 
